@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Clawsses</string>
+    <key>CFBundleDisplayName</key>
+    <string>Clawsses</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.clawsses.ios</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>UILaunchScreen</key>
+    <dict/>
+
+    <!-- Bluetooth -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Clawsses uses Bluetooth to connect to your Rokid glasses.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Clawsses uses Bluetooth to connect to your Rokid glasses.</string>
+
+    <!-- Microphone / Speech -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Clawsses uses the microphone for voice input to your AI assistant.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Clawsses uses speech recognition to transcribe voice commands.</string>
+
+    <!-- Camera -->
+    <key>NSCameraUsageDescription</key>
+    <string>Clawsses can capture photos to send to your AI assistant via the glasses camera.</string>
+
+    <!-- Local network (debug WebSocket server) -->
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>Clawsses runs a local Wi-Fi server so Rokid glasses can connect in debug mode.</string>
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_clawsses._tcp</string>
+    </array>
+
+    <!-- Background modes: audio for TTS, network for WebSocket keep-alive -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+        <string>fetch</string>
+    </array>
+
+    <!-- Supported orientations -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+
+    <key>UIRequiresFullScreen</key>
+    <false/>
+</dict>
+</plist>
