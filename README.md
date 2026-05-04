@@ -55,20 +55,32 @@ The only thing left for each app is filling in the three credential constants (`
 
 ## Setup in Xcode
 
-This repository contains Swift source files without a committed `.xcodeproj`. To build and run:
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/kbaker827/clawsses-ios.git
+   cd clawsses-ios
+   ```
 
-1. Open Xcode → File → New → Project → iOS App
-2. **Name the project `Clawsses`** (must match the Podfile target name)
-3. Set the bundle identifier to `com.clawsses.ios`
-4. Delete the auto-generated `ContentView.swift`
-5. Drag the `Clawsses/` folder from this repo into the Xcode project (check "Copy items if needed")
-6. Replace the generated `Info.plist` with `Clawsses/Info.plist` from this repo (or merge the keys)
-7. Add these capabilities in Signing & Capabilities:
-   - **Bluetooth** (implicitly granted via Info.plist keys)
-   - **Speech Recognition** (via Info.plist)
-   - **Microphone** (via Info.plist)
-8. **Close Xcode**, then run `pod install` in the repo root, and reopen via `*.xcworkspace`
-9. Build and run on a physical iPhone (Bluetooth and microphone require real hardware)
+2. Fill in your Rokid credentials in `Clawsses/Glasses/GlassesConnectionManager.swift`:
+   ```swift
+   private let kAppKey    = "YOUR_APP_KEY"
+   private let kAppSecret = "YOUR_APP_SECRET"
+   private let kAccessKey = "YOUR_ACCESS_KEY"
+   ```
+
+3. Run `pod install` to fetch RokidSDK and dependencies:
+   ```bash
+   pod install
+   ```
+
+4. Open the workspace (not the `.xcodeproj`):
+   ```bash
+   open Clawsses.xcworkspace
+   ```
+
+5. Set your Apple Developer team in **Signing & Capabilities**.
+
+6. Build and run on a physical iPhone (iOS 17+) — Bluetooth requires real hardware.
 
 ### Required capabilities in Xcode
 
