@@ -33,6 +33,27 @@ The original Android app uses Rokid's proprietary **CXR-M SDK** for the Bluetoot
 
 **Recommended for iOS:** Use **Debug Wi-Fi Mode** in Settings → Developer. The glasses app (Android) will connect to the phone's IP on port 8081.  The full BLE data path will work once Rokid releases an iOS SDK or documents their GATT characteristics.
 
+## SDK Setup
+
+The glasses now connect over **Bluetooth via the Rokid AI glasses SDK** — no Wi-Fi port or TCP server needed.
+
+The only thing left for each app is filling in the three credential constants (`kAppKey`, `kAppSecret`, `kAccessKey`) from [account.rokid.com/#/setting/prove](https://account.rokid.com/#/setting/prove), then running `pod install`.
+
+1. **Get credentials** at <https://account.rokid.com/#/setting/prove> and paste them into the glasses Swift file:
+   ```swift
+   private let kAppKey    = "YOUR_APP_KEY"
+   private let kAppSecret = "YOUR_APP_SECRET"
+   private let kAccessKey = "YOUR_ACCESS_KEY"
+   ```
+
+2. **Install CocoaPods dependencies** from the repo root:
+   ```bash
+   pod install
+   open *.xcworkspace   # always open the .xcworkspace, not .xcodeproj
+   ```
+
+3. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
+
 ## Setup in Xcode
 
 This repository contains Swift source files. To build and run:
