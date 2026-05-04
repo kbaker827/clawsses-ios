@@ -2,7 +2,7 @@
 
 
 > **🔵 Connectivity Update — May 2025**
-> The glasses connection has been migrated from **raw TCP sockets** to
+> The glasses connection has been migrated from **raw TCP sockets / debug Wi-Fi mode** to
 > **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
 > No Wi-Fi port forwarding is needed. See **SDK Setup** below.
 
@@ -17,21 +17,20 @@ This is a faithful iOS port of the Android phone-side app. The glasses-side app 
 - **Session management** — switch between OpenClaw sessions from your phone
 - **Voice input** — OpenAI Realtime API (primary) with iOS SFSpeechRecognizer fallback
 - **TTS output** — ElevenLabs text-to-speech with configurable voice
-- **Glasses bridge** — forwards all messages to/from Rokid glasses
-- **Debug Wi-Fi mode** — phone runs a WebSocket server; glasses connect over local Wi-Fi (fully functional on iOS)
-- **BLE scan** — discovers nearby Rokid glasses via CoreBluetooth
+- **Glasses bridge** — forwards all messages to/from Rokid glasses over Bluetooth via RokidSDK
+- **Device discovery** — lists paired Rokid glasses via `RokidMobileSDK.device.queryDeviceList()`
 
 ## Bluetooth / Glasses Connection
 
-The original Android app uses Rokid's proprietary **CXR-M SDK** for the Bluetooth data channel. That SDK is Android-only and has no public iOS equivalent.
+Glasses communicate over **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
 
 | Mode | iOS status |
 |------|-----------|
-| BLE device discovery (scan) | ✅ Fully functional via CoreBluetooth |
-| BLE data transport (send/receive JSON) | ⚠️ Stubbed — requires Rokid iOS SDK or GATT spec |
-| Debug Wi-Fi mode (WebSocket server on port 8081) | ✅ Fully functional |
+| Device discovery | ✅ `RokidMobileSDK.device.queryDeviceList()` |
+| BLE data transport (send JSON / TTS) | ✅ `RokidMobileSDK.vui.sendMessage()` + `sendTts()` |
+| Receive voice commands from glasses | ✅ `SDKBinderObserver.onAsrResult()` |
 
-**Recommended for iOS:** Use **Debug Wi-Fi Mode** in Settings → Developer. The glasses app (Android) will connect to the phone's IP on port 8081.  The full BLE data path will work once Rokid releases an iOS SDK or documents their GATT characteristics.
+The old Debug Wi-Fi Mode and raw CoreBluetooth stub have been replaced by the SDK. Credentials are obtained from [account.rokid.com/#/setting/prove](https://account.rokid.com/#/setting/prove).
 
 ## SDK Setup
 
@@ -39,7 +38,7 @@ The glasses now connect over **Bluetooth via the Rokid AI glasses SDK** — no W
 
 The only thing left for each app is filling in the three credential constants (`kAppKey`, `kAppSecret`, `kAccessKey`) from [account.rokid.com/#/setting/prove](https://account.rokid.com/#/setting/prove), then running `pod install`.
 
-1. **Get credentials** at <https://account.rokid.com/#/setting/prove> and paste them into the glasses Swift file:
+1. **Get credentials** at <https://account.rokid.com/#/setting/prove> and paste them into `Clawsses/Glasses/GlassesConnectionManager.swift`:
    ```swift
    private let kAppKey    = "YOUR_APP_KEY"
    private let kAppSecret = "YOUR_APP_SECRET"
@@ -52,22 +51,24 @@ The only thing left for each app is filling in the three credential constants (`
    open *.xcworkspace   # always open the .xcworkspace, not .xcodeproj
    ```
 
-3. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
+3. **Pair your glasses** once in the Rokid companion app — the SDK auto-connects over Bluetooth every launch.
 
 ## Setup in Xcode
 
-This repository contains Swift source files. To build and run:
+This repository contains Swift source files without a committed `.xcodeproj`. To build and run:
 
 1. Open Xcode → File → New → Project → iOS App
-2. Set the bundle identifier to `com.clawsses.ios`
-3. Delete the auto-generated `ContentView.swift`
-4. Drag the `Clawsses/` folder from this repo into the Xcode project (check "Copy items if needed")
-5. Replace the generated `Info.plist` with `Clawsses/Info.plist` from this repo (or merge the keys)
-6. Add these capabilities in Signing & Capabilities:
+2. **Name the project `Clawsses`** (must match the Podfile target name)
+3. Set the bundle identifier to `com.clawsses.ios`
+4. Delete the auto-generated `ContentView.swift`
+5. Drag the `Clawsses/` folder from this repo into the Xcode project (check "Copy items if needed")
+6. Replace the generated `Info.plist` with `Clawsses/Info.plist` from this repo (or merge the keys)
+7. Add these capabilities in Signing & Capabilities:
    - **Bluetooth** (implicitly granted via Info.plist keys)
    - **Speech Recognition** (via Info.plist)
    - **Microphone** (via Info.plist)
-7. Build and run on a physical iPhone (Bluetooth and microphone require real hardware)
+8. **Close Xcode**, then run `pod install` in the repo root, and reopen via `*.xcworkspace`
+9. Build and run on a physical iPhone (Bluetooth and microphone require real hardware)
 
 ### Required capabilities in Xcode
 
@@ -77,12 +78,12 @@ Go to your target → Signing & Capabilities → + Capability and add:
 ## Architecture
 
 ```
-OpenClaw Gateway  ←WebSocket→  Clawsses iOS  ←Wi-Fi/BLE→  Rokid Glasses (Android)
-      │                              │                              │
-   AI agent                   OpenClawClient               Glasses HUD app
-   Chat streaming             VoiceRecognitionManager       (unchanged Android app)
+OpenClaw Gateway  ←WebSocket→  Clawsses iOS  ←Bluetooth/RokidSDK→  Rokid Glasses (Android)
+      │                              │                                      │
+   AI agent                   OpenClawClient                        Glasses HUD app
+   Chat streaming             VoiceRecognitionManager                (unchanged Android app)
    Sessions                   ElevenLabsClient
-                              GlassesConnectionManager
+                              GlassesConnectionManager (RokidSDK)
 ```
 
 ### Key source files
@@ -92,9 +93,9 @@ OpenClaw Gateway  ←WebSocket→  Clawsses iOS  ←Wi-Fi/BLE→  Rokid Glasses 
 | `Protocol/Protocol.swift` | All message types (mirrors Android `Protocol.kt`) |
 | `Network/OpenClawClient.swift` | WebSocket client, Ed25519 auth, chat streaming |
 | `Network/DeviceIdentity.swift` | Ed25519 keypair via CryptoKit, stored in Keychain |
-| `Glasses/GlassesConnectionManager.swift` | CoreBluetooth scan + debug WebSocket server mode |
+| `Glasses/GlassesConnectionManager.swift` | **RokidSDK** — device discovery, send messages/TTS, receive ASR |
 | `Glasses/WakeSignalManager.swift` | Wake-signal buffering for glasses standby handling |
-| `Glasses/DebugGlassesServer.swift` | TCP/WebSocket server for debug mode (Network.framework) |
+| `Glasses/DebugGlassesServer.swift` | Legacy TCP/WebSocket debug server (superseded by RokidSDK) |
 | `Voice/VoiceCommandHandler.swift` | iOS Speech framework recognition |
 | `Voice/VoiceRecognitionManager.swift` | OpenAI Realtime primary + SFSpeechRecognizer fallback |
 | `TTS/ElevenLabsClient.swift` | ElevenLabs REST API client |
@@ -106,10 +107,9 @@ OpenClaw Gateway  ←WebSocket→  Clawsses iOS  ←Wi-Fi/BLE→  Rokid Glasses 
 All settings are in the app's Settings screen (gear icon):
 
 - **OpenClaw Server**: host, port, and access token
-- **Glasses**: BLE scan / debug Wi-Fi mode toggle
+- **Glasses**: Rokid SDK device picker (tap a paired device to connect)
 - **Voice**: OpenAI API key and enable/disable toggle
 - **TTS**: ElevenLabs API key and voice picker
-- **Developer**: debug Wi-Fi mode
 
 ## Protocol compatibility
 
