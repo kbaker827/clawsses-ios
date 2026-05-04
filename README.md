@@ -1,5 +1,11 @@
 # Clawsses iOS
 
+
+> **🔵 Connectivity Update — May 2025**
+> The glasses connection has been migrated from **raw TCP sockets** to
+> **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
+> No Wi-Fi port forwarding is needed. See **SDK Setup** below.
+
 iOS companion app for [Clawsses](https://github.com/dweddepohl/clawsses) — a wearable AI interface for Rokid glasses powered by OpenClaw.
 
 This is a faithful iOS port of the Android phone-side app. The glasses-side app still runs on the Rokid glasses hardware (which runs Android); only the phone companion app has been converted.
