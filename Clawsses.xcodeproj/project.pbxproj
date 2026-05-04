@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D1146A0A8B33B0ABC8DC688 /* ClawssesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140B09174937E1C1707A36 /* ClawssesApp.swift */; };
+		EB2E96F4BFB4A8D3D1A7C6E1 /* DebugGlassesServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1740F91738C95BA0307C594 /* DebugGlassesServer.swift */; };
+		A36176911590BE9B203634B9 /* GlassesConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2DEF6603679537E17CF2F /* GlassesConnectionManager.swift */; };
+		80FF0C439BA6594BF47A109B /* WakeSignalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F520DA185BC6A288715C4009 /* WakeSignalManager.swift */; };
+		673916B9B82BC8361FF01CDB /* DeviceIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652FCA14FD948FB087F7241E /* DeviceIdentity.swift */; };
+		354DD0F0FB3FEB0ABBE36EC3 /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1C84AF08B1716348E58C3 /* OpenClawClient.swift */; };
+		104C89AC2CD16555004EFA8D /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D61FC1162A80C6E4EC75BDD /* Protocol.swift */; };
+		78B7C97986B2A3E7E256DA6A /* ElevenLabsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600D9D063F18706D68547C0 /* ElevenLabsClient.swift */; };
+		279687BED035081B6BC6BFAD /* TtsPlaybackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D951C7345CE72EDAAF98C0 /* TtsPlaybackManager.swift */; };
+		75996708BB7C9475D10955D9 /* TtsSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDAEF7EEDB129D8F0021010 /* TtsSettingsManager.swift */; };
+		F26B84ADED03ABB466537A3F /* ChatMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C11057C718F869BC55C3F20 /* ChatMessageRow.swift */; };
+		0B94A2B4BBEAB391CF4EF7CC /* ConnectionStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476F5BE626E69497A6B80F33 /* ConnectionStatusBar.swift */; };
+		BFAEE4B1B0279818D118A8E4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEFDE8B289C0353A793E7D9 /* MainView.swift */; };
+		47FABE05517CA1EB1C410A6C /* SessionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FE1F0BD062477BDF11158B /* SessionSelector.swift */; };
+		D0685AFB0F3AAA4438C8025D /* DeveloperSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CECDADCAC42E3B9A29F3A92 /* DeveloperSection.swift */; };
+		D348086E164A2FD5F3D4F123 /* GlassesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D3957FACD1C8892AA0DC62 /* GlassesSection.swift */; };
+		8B5897F6498BE1665B0C74C8 /* ServerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575489EF8FB2C704493CBF02 /* ServerSection.swift */; };
+		ACC62183DE8817865638E6D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B693FC20C6FCEAE15A4CFE /* SettingsView.swift */; };
+		96A253CD872277005111D63E /* TtsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010F70E1588270C5D927740 /* TtsSection.swift */; };
+		7E7BBD58DAA0524EC736DB4A /* VoiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79AD0017D8D8A185193A502 /* VoiceSection.swift */; };
+		09AF5F0160450ABA5CD5FA2E /* VoiceCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E279F2A988E7544182F04DB /* VoiceCommandHandler.swift */; };
+		26EFD55FE02AD7C0E9E2BFFB /* VoiceRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41400A250695E7537532232 /* VoiceRecognitionManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C93386693927C06F571B293 /* Clawsses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clawsses.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CAF4653EB02DCA8DD6984D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00140B09174937E1C1707A36 /* ClawssesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClawssesApp.swift; sourceTree = "<group>"; };
+		C1740F91738C95BA0307C594 /* DebugGlassesServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugGlassesServer.swift; sourceTree = "<group>"; };
+		E8F2DEF6603679537E17CF2F /* GlassesConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassesConnectionManager.swift; sourceTree = "<group>"; };
+		F520DA185BC6A288715C4009 /* WakeSignalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeSignalManager.swift; sourceTree = "<group>"; };
+		652FCA14FD948FB087F7241E /* DeviceIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentity.swift; sourceTree = "<group>"; };
+		17F1C84AF08B1716348E58C3 /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
+		4D61FC1162A80C6E4EC75BDD /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		F600D9D063F18706D68547C0 /* ElevenLabsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsClient.swift; sourceTree = "<group>"; };
+		62D951C7345CE72EDAAF98C0 /* TtsPlaybackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsPlaybackManager.swift; sourceTree = "<group>"; };
+		EEDAEF7EEDB129D8F0021010 /* TtsSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSettingsManager.swift; sourceTree = "<group>"; };
+		8C11057C718F869BC55C3F20 /* ChatMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageRow.swift; sourceTree = "<group>"; };
+		476F5BE626E69497A6B80F33 /* ConnectionStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusBar.swift; sourceTree = "<group>"; };
+		BCEFDE8B289C0353A793E7D9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		02FE1F0BD062477BDF11158B /* SessionSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSelector.swift; sourceTree = "<group>"; };
+		6CECDADCAC42E3B9A29F3A92 /* DeveloperSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperSection.swift; sourceTree = "<group>"; };
+		99D3957FACD1C8892AA0DC62 /* GlassesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassesSection.swift; sourceTree = "<group>"; };
+		575489EF8FB2C704493CBF02 /* ServerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSection.swift; sourceTree = "<group>"; };
+		D1B693FC20C6FCEAE15A4CFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1010F70E1588270C5D927740 /* TtsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TtsSection.swift; sourceTree = "<group>"; };
+		F79AD0017D8D8A185193A502 /* VoiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSection.swift; sourceTree = "<group>"; };
+		3E279F2A988E7544182F04DB /* VoiceCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandHandler.swift; sourceTree = "<group>"; };
+		C41400A250695E7537532232 /* VoiceRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F514E3FDAF912CF17924E9D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0274404B98CE9B6583E7FE32 = {
+			isa = PBXGroup;
+			children = (
+				81D850E44BE3F929D45603E2 /* Clawsses */,
+				F4E5CA5EECAC9FE095295D5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4E5CA5EECAC9FE095295D5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C93386693927C06F571B293 /* Clawsses.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81D850E44BE3F929D45603E2 /* Clawsses */ = {
+			isa = PBXGroup;
+			children = (
+				73CAF4653EB02DCA8DD6984D /* Info.plist */,
+				00140B09174937E1C1707A36 /* ClawssesApp.swift */,
+				B8E9C40CCCA0826712908386 /* Glasses */,
+				DB6E4495ABC07E85F18F6425 /* Network */,
+				62314AC41CEBC1538AD89144 /* Protocol */,
+				DB91023385DAEBC500A785FD /* TTS */,
+				936B214D530A702F0E779E50 /* UI */,
+				CDCB9853777485D6320BB2C5 /* Voice */,
+			);
+			path = Clawsses;
+			sourceTree = "<group>";
+		};
+		B8E9C40CCCA0826712908386 /* Glasses */ = {
+			isa = PBXGroup;
+			children = (
+				C1740F91738C95BA0307C594 /* DebugGlassesServer.swift */,
+				E8F2DEF6603679537E17CF2F /* GlassesConnectionManager.swift */,
+				F520DA185BC6A288715C4009 /* WakeSignalManager.swift */,
+			);
+			path = Glasses;
+			sourceTree = "<group>";
+		};
+		DB6E4495ABC07E85F18F6425 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				652FCA14FD948FB087F7241E /* DeviceIdentity.swift */,
+				17F1C84AF08B1716348E58C3 /* OpenClawClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		62314AC41CEBC1538AD89144 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4D61FC1162A80C6E4EC75BDD /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DB91023385DAEBC500A785FD /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				F600D9D063F18706D68547C0 /* ElevenLabsClient.swift */,
+				62D951C7345CE72EDAAF98C0 /* TtsPlaybackManager.swift */,
+				EEDAEF7EEDB129D8F0021010 /* TtsSettingsManager.swift */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		936B214D530A702F0E779E50 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B8E1BF03D875841EA255DCD5 /* Settings */,
+				8C11057C718F869BC55C3F20 /* ChatMessageRow.swift */,
+				476F5BE626E69497A6B80F33 /* ConnectionStatusBar.swift */,
+				BCEFDE8B289C0353A793E7D9 /* MainView.swift */,
+				02FE1F0BD062477BDF11158B /* SessionSelector.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B8E1BF03D875841EA255DCD5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6CECDADCAC42E3B9A29F3A92 /* DeveloperSection.swift */,
+				99D3957FACD1C8892AA0DC62 /* GlassesSection.swift */,
+				575489EF8FB2C704493CBF02 /* ServerSection.swift */,
+				D1B693FC20C6FCEAE15A4CFE /* SettingsView.swift */,
+				1010F70E1588270C5D927740 /* TtsSection.swift */,
+				F79AD0017D8D8A185193A502 /* VoiceSection.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CDCB9853777485D6320BB2C5 /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+				3E279F2A988E7544182F04DB /* VoiceCommandHandler.swift */,
+				C41400A250695E7537532232 /* VoiceRecognitionManager.swift */,
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7699779F892FA6F96E69774 /* Clawsses */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F4CBD6E620DCC92793853AA /* Build configuration list for PBXNativeTarget "Clawsses" */;
+			buildPhases = (
+				85EA45DF9BEA53FA9C5F2DFB /* Sources */,
+				F514E3FDAF912CF17924E9D4 /* Frameworks */,
+				04881010B8957D3B8CCAB535 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clawsses;
+			productName = Clawsses;
+			productReference = 5C93386693927C06F571B293 /* Clawsses.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2CA65472A8280C7AEEA383A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E7699779F892FA6F96E69774 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 0D263BF6EAB70E812D329B6C /* Build configuration list for PBXProject "Clawsses" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0274404B98CE9B6583E7FE32;
+			productRefGroup = F4E5CA5EECAC9FE095295D5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7699779F892FA6F96E69774 /* Clawsses */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04881010B8957D3B8CCAB535 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85EA45DF9BEA53FA9C5F2DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D1146A0A8B33B0ABC8DC688 /* ClawssesApp.swift in Sources */,
+				EB2E96F4BFB4A8D3D1A7C6E1 /* DebugGlassesServer.swift in Sources */,
+				A36176911590BE9B203634B9 /* GlassesConnectionManager.swift in Sources */,
+				80FF0C439BA6594BF47A109B /* WakeSignalManager.swift in Sources */,
+				673916B9B82BC8361FF01CDB /* DeviceIdentity.swift in Sources */,
+				354DD0F0FB3FEB0ABBE36EC3 /* OpenClawClient.swift in Sources */,
+				104C89AC2CD16555004EFA8D /* Protocol.swift in Sources */,
+				78B7C97986B2A3E7E256DA6A /* ElevenLabsClient.swift in Sources */,
+				279687BED035081B6BC6BFAD /* TtsPlaybackManager.swift in Sources */,
+				75996708BB7C9475D10955D9 /* TtsSettingsManager.swift in Sources */,
+				F26B84ADED03ABB466537A3F /* ChatMessageRow.swift in Sources */,
+				0B94A2B4BBEAB391CF4EF7CC /* ConnectionStatusBar.swift in Sources */,
+				BFAEE4B1B0279818D118A8E4 /* MainView.swift in Sources */,
+				47FABE05517CA1EB1C410A6C /* SessionSelector.swift in Sources */,
+				D0685AFB0F3AAA4438C8025D /* DeveloperSection.swift in Sources */,
+				D348086E164A2FD5F3D4F123 /* GlassesSection.swift in Sources */,
+				8B5897F6498BE1665B0C74C8 /* ServerSection.swift in Sources */,
+				ACC62183DE8817865638E6D9 /* SettingsView.swift in Sources */,
+				96A253CD872277005111D63E /* TtsSection.swift in Sources */,
+				7E7BBD58DAA0524EC736DB4A /* VoiceSection.swift in Sources */,
+				09AF5F0160450ABA5CD5FA2E /* VoiceCommandHandler.swift in Sources */,
+				26EFD55FE02AD7C0E9E2BFFB /* VoiceRecognitionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D000E07483C72B3F3F7896F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_Level = "-Onone";
+			};
+			name = Debug;
+		};
+		08938416B4BA93CB970E8E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28B239BEBA2E3759AE024079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Clawsses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clawsses.ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBEA152B6EBB48146FB0B536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Clawsses/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.clawsses.ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D263BF6EAB70E812D329B6C /* Build configuration list for PBXProject "Clawsses" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D000E07483C72B3F3F7896F4 /* Debug */,
+				08938416B4BA93CB970E8E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F4CBD6E620DCC92793853AA /* Build configuration list for PBXNativeTarget "Clawsses" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B239BEBA2E3759AE024079 /* Debug */,
+				EBEA152B6EBB48146FB0B536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = D2CA65472A8280C7AEEA383A /* Project object */;
+}
